@@ -3,7 +3,7 @@ package com.example.demo.test.board.controller;
 import com.example.demo.test.board.dto.BoardDto;
 import com.example.demo.test.board.entity.Board;
 import com.example.demo.test.board.service.BoardService;
-import com.example.demo.test.exception.service.DataNotFoundException;
+import com.example.demo.test.error.exception.DataNotFoundException;
 import com.example.demo.test.member.entity.Member;
 import com.example.demo.test.member.service.MemberService;
 import jakarta.validation.Valid;

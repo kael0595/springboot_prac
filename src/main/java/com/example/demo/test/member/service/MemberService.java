@@ -1,6 +1,6 @@
 package com.example.demo.test.member.service;
 
-import com.example.demo.test.exception.service.DataNotFoundException;
+import com.example.demo.test.error.exception.DataNotFoundException;
 import com.example.demo.test.member.dto.MemberDTO;
 import com.example.demo.test.member.entity.Member;
 import com.example.demo.test.member.repository.MemberRepository;

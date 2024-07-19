@@ -1,4 +1,4 @@
-package com.example.demo.test.config;
+package com.example.demo.test.security.config;
 
 import com.example.demo.test.member.role.MemberRole;
 import com.example.demo.test.member.service.MyUserDetailsService;
