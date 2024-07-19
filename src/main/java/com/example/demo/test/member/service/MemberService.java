@@ -51,7 +51,7 @@ public class MemberService {
         }
     }
 
-    public Member getByUsernameAndPassword(String username, String password) {
+    public Member getByUsernameAndPassword(String username, String password) throws DataNotFoundException {
         return memberRepository.findByUsernameAndPassword(username, password);
     }
 

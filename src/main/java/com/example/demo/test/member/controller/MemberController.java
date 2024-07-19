@@ -1,5 +1,6 @@
 package com.example.demo.test.member.controller;
 
+import com.example.demo.test.exception.service.DataNotFoundException;
 import com.example.demo.test.member.dto.MemberDTO;
 import com.example.demo.test.member.entity.Member;
 import com.example.demo.test.member.service.MemberService;
@@ -44,7 +45,7 @@ public class MemberController {
 
     @PostMapping("login")
     public String login(HttpSession session,
-                        @ModelAttribute MemberDTO memberDTO) {
+                        @ModelAttribute MemberDTO memberDTO) throws DataNotFoundException {
 
         Member member = memberService.getByUsernameAndPassword(memberDTO.getUsername(), memberDTO.getPassword());
 
