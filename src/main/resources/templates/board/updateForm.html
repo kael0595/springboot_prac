@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <form th:action="@{/board/update/{id}(id=${board.id})}" th:object="${board}" method="post">
+        <table>
+            <input type="hidden" id="id" th:field="*{id}">
+            <tr>
+                <th>No.</th>
+                <td id="boardId" th:text="${board.id}"></td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td><input id="boardTitle" name="title" th:value="${board.title}"></td>
+            </tr>
+            <tr>
+                <th>내용.</th>
+                <td>
+                    <textarea id="boardContent" name="content" th:text="${board.content}"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td id="boardAuthor" th:text="${member.username}"></td>
+            </tr>
+            <tr>
+                <th>작성일자</th>
+                <td id="boardRegDt" th:text="${board.regDt}"></td>
+            </tr>
+            <tr th:if="${board.upd ne null}">
+                <th>수정자</th>
+                <td id="boardUpd" th:text="${board.upd}"></td>
+            </tr>
+            <tr th:if="${board.upd ne null}">
+                <th>수정일자</th>
+                <td id="boardUpdDt" th:text="${board.updDt}"></td>
+            </tr>
+        </table>
+        <button>수정</button>
+        <button>취소</button>
+    </form>
+</center>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h2>작성</h2>
+    <br>
+    <form action="/board/insert" method="post">
+        <div>
+            제목 :
+            <input type="text" name="title" id="title">
+        </div>
+        <br>
+        <div>
+            내용 :
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+        <button type="submit" id="sendBtn">등록</button>
+        <button type="button" id="cancelBtn" onclick="cancel()">취소</button>
+    </form>
+</center>
+</body>
+</html>

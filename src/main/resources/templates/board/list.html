@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <table>
+        <thead>
+        <tr>
+            <th>NO.</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일자</th>
+            <th>수정자</th>
+            <th>수정일자</th>
+            <th>조회수</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="board : ${boardList}" th:if="${board.deleteYn ne 'Y'}">
+            <td th:text="${board.id}"></td>
+            <td>
+                <a th:text="${board.title}" th:href="@{|/board/${board.id}|}"></a>
+            </td>
+            <td th:text="${board.author.username}"></td>
+            <td th:text="${board.regDt}"></td>
+            <td th:if="${board.upd ne null}">
+                <span th:text="${board.upd.username}"></span>
+            </td>
+            <td th:if="${board.upd ne null}">
+                <span th:text="${board.updDt}"></span>
+            </td>
+            <td th:text="${board.hit}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <button onclick="insertBtn();">등록</button>
+</center>
+</body>
+<script>
+    function insertBtn() {
+        location.href = '/board/insert';
+    }
+</script>
+</html>
